@@ -1,0 +1,19 @@
+micronaut.application.name: keyManager
+
+datasources:
+  default:
+    url: ${DB_URL:`jdbc:postgresql://localhost:5432/key-manager`}
+    driverClassName: org.postgresql.Driver
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
+    schema-generate: CREATE_DROP
+    dialect: POSTGRES
+
+grpc:
+  server:
+    port: ${GRPC_SERVER_PORT:50051}
+    max-inbound-message-size: 1024
+
+jpa.default.properties.hibernate.hbm2ddl.auto: update
+
+itau.erp.api.url: http://localhost:9091
